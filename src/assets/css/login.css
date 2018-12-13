@@ -1,0 +1,72 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	/* font-family: "微软雅黑"; */
+	
+}
+body,html{
+	width: 100%;
+}
+.phone{
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	position: fixed;
+	z-index: 4;
+	left: 0px;
+	top: 0px;
+}
+.phone .p_h3{
+	background: #ce3d3e;
+	color: #fff;
+	font-weight: normal;
+	padding: 5% 0px;
+	/* height: 10%; */
+}
+.jiant{
+	margin-right: 20px;
+	margin-left: 5%;
+	padding-top: 10%;
+	font-size: 25px;
+}
+.js_loginin{
+	width: 90%;
+	margin: 10% 5%;
+	font-size: 20px;
+	color: #b2b2b2;
+}
+.js_loginin>div{
+	border-bottom: 1px solid #acadad;
+	margin-top: 10%;
+}
+.js_lfon{
+	font-size: 25px;
+	color: #b2b2b2;
+}
+.js_lfon1{
+	font-size: 20px;
+}
+.js_loginin input{
+	border: none;
+	outline: none;
+	font-size: 16px;
+	width: 70%;
+	color: #b3b3b3;
+}
+.tijiao{
+	display: block;
+	width: 100%;
+	background: #ce3d3a;
+	color: #fff;
+	padding: 10px 0px;
+	text-align: center;
+	border-radius: 7px;
+	margin-top: 10%;
+	font-size: 18px;
+}
+.js_localone{
+			position:fixed;
+			top:0px;
+			z-index:6;
+			height:60px;
+		}

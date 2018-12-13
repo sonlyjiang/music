@@ -1,0 +1,526 @@
+<template>
+  <div id="app" v-cloak>
+    <div :class="{'js_leftloginall':true,'js_leftloginallnone':lefttf,}">
+      <div :class="{'js_rightk':true,'js_rightk1':lefttf}" @click="lefthide()">
+      </div>
+      <div :class="{'js_leftlogin':true,'js_leftlogin1':lefttf}">
+        <div>
+          <div class="js_pictitle">
+            <div class="toux"><img :src="tx" alt=""></div>
+            <router-link to="/login" class="js_enlo">立即登录</router-link>
+          </div>
+          <div class="js_ptcon">
+              <ul>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-duanxin"></i>
+                    我的消息
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-gouwuche"></i>
+                    积分商城
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-huiyuan"></i>
+                    会员中心
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-zaixianbaoming"></i>
+                    在线听歌免流量
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-maikefeng"></i>
+                    听歌识曲
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-yifu"></i>
+                    主题换肤
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-dengpao"></i>
+                    夜间模式
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-clock"></i>
+                    定时停止播放
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-yuanxingdecircular223"></i>
+                    音乐闹钟
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/send">
+                    <i class="iconfont icon-cheliang"></i>
+                    驾驶模式
+                  </router-link>
+                </li>
+              </ul> 
+              <div class="js_ptbot">
+                  <ul>
+                    <li>
+                      <router-link to="/she">
+                        设置
+                      </router-link>
+                    </li>
+                    <li>
+                      <router-link to="/outapp">
+                        退出应用
+                      </router-link>
+                    </li>
+                  </ul>
+              </div>           
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="js_hometi">
+      
+      <ul>
+        <li :class="{'js_opa':tf==1}" @click="change(1)">
+            <router-link to="/index">
+            <i class="iconfont icon-tubiaozhizuomoban js_ht1"></i>
+          </router-link>
+        </li>
+        <li :class="{'js_opa':tf==2}" @click="change(2)">
+            <router-link to="/music" :class="{'js_opa':tf==2}" @click="change(2)">
+            <i class="iconfont icon-yinyue js_ht2"></i>
+          </router-link>
+        </li>
+        <li :class="{'js_opa':tf==3}" @click="change(3)">
+            <router-link to="/people" :class="{'js_opa':tf==3}" @click="change(3)">
+            <i class="iconfont icon-ren3 js_ht3"></i>
+          </router-link>
+        </li>
+      </ul>
+      <span class="js_search">
+        <router-link to="/search">
+          <i class="iconfont icon-sousuo"></i>
+        </router-link>
+      </span>
+      <div class="js_leftsan" @click="leftin()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+          
+    </div>
+    <div class="js_musicact">
+      <router-link class="js_mus" to="/musicplaying">
+        <span class="js_mpic">
+          <img :src='tx1' alt="">
+        </span>
+        <span class="js_mcon">
+          <span class="js_mtitle">{{musicname}}</span>
+          <span class="js_msinger">{{musicer}}</span>
+        </span>
+      </router-link>
+      <span class="js_muaction">
+        <span class="js_bof">
+          <i :class="{'iconfont':true,'icon-play_icon':true,'js_bof1':!bftf}" @click="djbf()"></i>
+          <i :class="{'iconfont':true,'icon-bofang1':true,'js_bof2':bftf}" @click="djbf()"></i>
+        </span>
+        <span class="js_ged" @click="ged()">
+          <i class="iconfont icon-sanheng"></i>
+        </span>
+      </span>
+    </div>
+    <div class="musico">
+      <div class="menterbg"></div>
+      <ul class="menter">
+        <li class="menterli1">
+          <span><i class="iconfont icon-xunhuan"></i>列表</span>
+        </li>
+        <li v-for="(v,i) in musicmenu">
+          
+          <span class="musictitle">
+          	{{v.title}}
+          </span>
+          <span class="musicsinger">
+          	{{v.singer}}
+          </span>
+        </li>
+      </ul>
+    </div>
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'app',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+      tf:1,
+      lefttf:true,
+      tx:'src/assets/images/menu2.jpg',
+      tx1:'src/assets/images/menu3.jpg',
+      musicname:"好久不见",
+      musicer:"陈奕迅",
+      bftf:true,
+      musicmenu:[],
+    }
+  },
+  methods:{
+    change(n){
+      this.tf=n;
+      console.log(this.tf);
+    },
+    leftin(){
+      this.lefttf=false;
+    },
+    lefthide(){
+      this.lefttf=true;
+    },
+    djbf(){
+      this.bftf=!this.bftf;
+    }
+  },
+  mounted(){
+    this.$http.get('./src/assets/data/music.json', {
+    params: {
+      user: 12345,
+      pass:123
+    }
+  })
+  .then((response)=>{
+    
+    this.musicmenu=response.data.result.data;
+    console.log(this.musicmenu.menu[0].title)
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+   
+  }
+}
+</script>
+
+<style>
+
+*{
+  margin:0px;
+  padding:0px;
+  text-decoration:none;
+  list-style:none;
+}
+[v-cloak]{
+  display:none;
+}
+#app{
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  width:100%;
+  color:#333;
+  overflow:hidden;
+}
+#app i{
+  
+}
+.js_hometi{
+  background:#ce3d3e;
+  position:fixed;
+  top:0px;
+  z-index:3;
+  overflow:hidden;
+  
+  line-height:60px;
+  height:60px;
+  width:100%;
+  
+}
+.js_hometi ul{
+  width:100%;
+  display:flex;
+  padding:0px 30%;
+  box-sizing:border-box;
+}
+.js_hometi ul li{
+  flex:1;
+  text-align:center;
+}
+.js_hometi a{
+  color:#fff;
+  font-size:25px;
+  float:left;
+  width:100%;
+  
+  box-sizing:border-box;
+  opacity:0.5;
+}
+.js_hometi .js_ht1{
+  font-size:28px;
+
+}
+.js_hometi .js_ht2{
+  font-size:23px;
+  margin-top:0.5%;
+}
+.js_hometi .js_ht3{
+  font-size:28px;
+}
+.js_hometi .js_opa a{
+  opacity:1;
+}
+.js_search{
+  position:absolute;
+  right:2%;
+  top:0px;
+  cursor:pointer;
+  
+}
+.js_search a{
+  opacity:1;
+}
+.js_search i{
+  font-size:25px;
+  color:#fff;
+  
+}
+.js_leftloginall{
+  width:100%;
+  height:100%;
+  position:fixed;
+  left:0%;
+  top:0px;
+  z-index:4;
+}
+.js_leftloginallnone{
+  left:-100%;
+  transition:1s;
+}
+.js_leftlogin{
+  background:#fff;
+  width:85%;
+  left:0%;
+  position:absolute;
+  transition:0.5s;
+  height:100%;
+}
+.js_leftlogin>div{
+  overflow:auto;
+}
+.js_leftlogin1{
+   left:-85%;
+}
+.js_leftlogin>div{
+  width:100%;
+  height:100%;
+}
+.js_pictitle{
+  background:url('assets/images/1.gif') no-repeat;
+  background-size:150% 130%;
+  background-repeat:none;
+  height:30%;
+  overflow:hidden;
+}
+.toux{
+  width:70px;
+  height:70px;
+  margin:10% auto 0px;
+  border:1px solid #999;
+  border-radius:50%;
+  overflow:hidden;
+  padding:3px;
+  
+}
+.toux img{
+  width:100%;
+  border-radius:50%;
+
+}
+.js_enlo{
+  width:50%;
+  color:#fff;
+  padding:5px 20px;
+  border:1px solid #fff;
+  margin:10px auto;
+  display:block;
+  text-align:center;
+}
+.js_rightk{
+  width:100%;
+  height:100%;
+  opacity:0.5;
+  float:right;
+  background:#000;
+
+}
+.js_rightk1{
+  opacity:0;
+
+}
+.js_leftsan{
+  width:20px;
+  position:absolute;
+  left:5%;
+  top:15px;
+}
+.js_leftsan span{
+  display:block;
+  width:100%;
+  height:2px;
+  background:#fff;
+  margin:5px 0px;
+}
+.js_ptcon{
+  overflow:auto;
+  padding-left:5%;
+  padding-bottom:60px;
+}
+.js_ptcon a{
+  color:#333;
+  font-size:14px;
+  height:45px;
+  line-height:45px;
+  
+}
+.js_ptcon i{
+  color:#ce3d3e;
+  font-size:20px;
+  margin-top:3px;
+  display:inline-block;
+  margin-right:10px;
+}
+.js_ptbot{
+  position:fixed;
+  bottom:0px;
+  margin-left:-5%;
+  background:#fff;
+  width:85.5%;
+  
+  box-shadow:1px 1px 5px #ccc;
+}
+.js_ptbot ul{
+  display:flex;
+}
+.js_ptbot li{
+  flex:1;
+  text-align:center;
+}
+.js_musicact{
+  position:fixed;
+  bottom:0px;
+  width:100%;
+  height:60px;
+  left:0px;
+  z-index:3;
+  background:#fff;
+  opacity:0.97;
+  font-size:14px;
+  box-shadow:1px 1px 5px #ccc;
+}
+.js_mus{
+  color:#000;
+  width:70%;
+  height:100%;
+  float:left;
+  padding-top:5px;
+}
+.js_mus span{
+  float:left;
+}
+.js_mpic{
+  width:50px;
+  height:50px;
+  margin-left:2%;
+
+}
+.js_mpic img{
+  width:40px;
+  padding:5px;
+}
+.js_mcon{
+  margin-left:5px;
+}
+.js_mcon span{
+  display:block;
+  float:none;
+  line-height:25px;
+}
+.js_msinger{
+  font-size:12px;
+  color:#777;
+  line-height:12px;
+}
+.js_muaction{
+  width:30%;
+  float:right;
+}
+.js_bof{
+  position:absolute;
+  right:70px;
+}
+.js_bof i{
+  font-size:35px;
+  color:#ea3e23;
+  line-height:70px;
+}
+.js_bof1{
+  display:none;
+}
+.js_bof2{
+  display:none;
+}
+.js_ged{
+  position:absolute;
+  right:3%;
+}
+.js_ged i{
+  color:#000;
+  font-size:35px;
+  line-height:60px;
+}
+.musico{
+  position:fixed;
+  z-index:99;
+  color:#000;
+  width:100%;
+  height:100%;
+  overflow:auto;
+  bottom:0px;
+  left:0px;
+}
+.menterbg{
+  position:absolute;
+  background:#000;
+  z-index:1;
+  opacity:0.5;
+  width:100%;
+  height:100%;
+
+}
+.menter{
+  background:#fefeff;
+  position:absolute;
+  z-index:2;
+  bottom:0px;
+  left:0px;
+  width:100%;
+  line-height:50px;
+  font-size:17px;
+  padding-left:20px;
+  box-sizing:border-box;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height:60%;
+  overflow:auto;
+}
+</style>

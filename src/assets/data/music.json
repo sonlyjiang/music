@@ -1,0 +1,63 @@
+{
+    "resultcode": "200",
+    "reason": "Success",
+    "result": {
+        "data": [{
+        	"id":1,
+        	"title":"Shape of You",
+        	"singer":"Ed Sheeran",
+        	"lyrics":"",
+        	"src":"./src/assets/data/mp3/Shape of You.mp3",
+            "imgsrc":"./src/assets/data/mp3/img/shape of you.jpg"
+        },{
+        	"id":2,
+        	"title":"好久不见",
+        	"singer":"陈奕迅",
+        	"lyrics":"",
+        	"src":"./src/assets/data/mp3/好久不见.mp3",
+            "imgsrc":"./src/assets/data/mp3/img/好久不见.jpg"
+        },{
+        	"id":3,
+        	"title":"往后余生",
+        	"singer":"王贰浪",
+        	"lyrics":"",
+        	"src":"./src/assets/data/mp3/往后余生.mp3",
+            "imgsrc":"./src/assets/data/mp3/img/往后余生.jpg"
+        },{
+        	"id":4,
+        	"title":"沙漠骆驼",
+        	"singer":"展展与罗罗",
+        	"lyrics":"",
+        	"src":"./src/assets/data/mp3/沙漠骆驼.mp3",
+            "imgsrc":"./src/assets/data/mp3/img/沙漠骆驼.jpg"
+        },{
+            "id":5,
+            "title":"水星记",
+            "singer":"郭顶",
+            "lyrics":"",
+            "src":"./src/assets/data/mp3/水星记.mp3",
+            "imgsrc":"./src/assets/data/mp3/img/水星记.jpg"
+        },{
+            "id":6,
+            "title":"That Girl",
+            "singer":"Olly Murs",
+            "lyrics":"",
+            "src":"./src/assets/data/mp3/That Girl.mp3",
+            "imgsrc":"./src/assets/data/mp3/img/that girl.jpg"
+        },{
+            "id":7,
+            "title":"广东十年爱情故事",
+            "singer":"广东雨神",
+            "lyrics":"",
+            "src":"./src/assets/data/mp3/广东十年爱情故事.mp3",
+            "imgsrc":"./src/assets/data/mp3/img/广东十年爱情故事.jpg"
+        },{
+            "id":8,
+            "title":"Something Just Like This",
+            "singer":"The Chainsmokers/Cold Play",
+            "lyrics":"",
+            "src":"./src/assets/data/mp3/Something Just Like This.mp3",
+            "imgsrc":"./src/assets/data/mp3/img/Something Just Like This.jpg"
+        }]
+    }
+}
